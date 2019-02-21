@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "../node_modules/@angular/material/prebuilt-themes/indigo-pink.css";
+
+$fa-font-path: "@fortawesome/fontawesome-free/webfonts";
+@import "~@fortawesome/fontawesome-free/scss/fontawesome";
+@import "~@fortawesome/fontawesome-free/scss/solid";
+@import "~@fortawesome/fontawesome-free/scss/regular";
+@import "~@fortawesome/fontawesome-free/scss/brands";
+
+@import 'assets/sass/main';
+.cds_table_wrapper_card .table th, .table td{
+    float: left;
+    width: 100%;
+    background: #f8f9fa42;
+    height: 444px;
+    font-weight: 600;
+    text-align: center;
+    overflow: scroll;
+    color: #212529bd;
+    font-size: 14px;
+    overflow-x: hidden;
+    text-align: center !important;
+}
+

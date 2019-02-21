@@ -1,0 +1,190 @@
+<section class="block">
+  <div class="container-fluid">
+    <div class="pageHeader">
+      <h3 class="headerText"><i class="fa fa-file-invoice"></i> Forms</h3>
+    </div>
+
+    <div class="card">
+      <div class="card-body">
+
+        <div class="subHeader">
+          <h6>Basic Details (Text, Select Dropdown, Password, Datepickers)</h6>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4">
+            <div class="form-group">
+              <mat-form-field appearance="outline">
+                <mat-label>First Name</mat-label>
+                <input
+                  matInput
+                  placeholder="Placeholder"
+                  value="Harikrishna"
+                  required
+                />
+                <i matSuffix class="fa fa-smiley"></i>
+                <mat-hint>Hint</mat-hint>
+              </mat-form-field>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="form-group">
+              <mat-form-field appearance="outline">
+                <mat-label>Last Name</mat-label>
+                <input
+                  matInput
+                  placeholder="Placeholder"
+                  value="Nair"
+                  required
+                />
+                <i matSuffix class="fa fa-smiley"></i>
+                <mat-hint>Hint</mat-hint>
+              </mat-form-field>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="form-group">
+              <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
+                <input matInput required type="email"/>
+                <i matSuffix class="fa fa-smiley"></i>
+                <mat-hint>Hint</mat-hint>
+              </mat-form-field>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="form-group">
+              <mat-form-field appearance="outline">
+                <mat-label>Mobile</mat-label>
+                <input matInput required type="tel"/>
+                <i matSuffix class="fa fa-smiley"></i>
+              </mat-form-field>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="form-group">
+              <mat-form-field appearance="outline">
+                <mat-label>Password</mat-label>
+                <input required  matInput placeholder="Enter your password"
+                  [type]="hide ? 'password' : 'text'"
+                />
+                <i matSuffix (click)="hide = !hide"
+                  class="fa {{ hide ? 'fa-eye-slash' : 'fa-eye' }}"
+                ></i>
+              </mat-form-field>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="form-group">
+              <mat-form-field appearance="outline">
+                <mat-label>Confirm Password</mat-label>
+                <input required  matInput placeholder="Enter your password"
+                  [type]="hide ? 'password' : 'text'"
+                />
+                <i matSuffix (click)="hide = !hide"
+                  class="fa {{ hide ? 'fa-eye-slash' : 'fa-eye' }}"
+                ></i>
+              </mat-form-field>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="form-group">
+              <mat-form-field appearance="outline">
+                <mat-label>Relationship Status</mat-label>
+                <mat-select>
+                  <mat-option *ngFor="let status of rStatus" [value]="status.value">{{status.viewValue}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+              <div class="form-group">
+                <mat-form-field appearance="outline">
+                  <mat-label>Date of Birth</mat-label>
+                  <input matInput [matDatepicker]="picker">
+                  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                  <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+              </div>
+          </div>
+
+          <div class="col-md-4">
+              <div class="form-group">
+                <mat-form-field appearance="outline">
+                  <mat-label>Upload Picture</mat-label>
+                  <input matInput>
+                  <input hidden  #fileInput type="file">
+                  <i class="fa fa-upload" matSuffix (click)="fileInput.click()" ></i>
+                </mat-form-field>
+              </div>
+          </div>
+
+        </div>
+
+        <hr>
+
+
+        <div class="subHeader">
+          <h6>Other Details (Radio, Checkbox, Slider, Textarea)</h6>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for="" class="d-block">Sex</label>
+              <mat-radio-group>
+                <mat-radio-button value="1">Male</mat-radio-button>
+                <mat-radio-button value="2">Female</mat-radio-button>
+              </mat-radio-group>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for="" class="d-block">Preference</label>
+              <mat-radio-group>
+              <mat-checkbox>One</mat-checkbox>
+              <mat-checkbox>Two</mat-checkbox>
+              </mat-radio-group>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mt-3">
+          <div class="col-md-12">
+            <div class="form-group mb-3">
+              <label for="" class="d-block">Newsletter</label>
+              <mat-slide-toggle>Recieve Newsletter from App</mat-slide-toggle>
+            </div>
+          </div>
+
+
+          <div class="col-md-12">
+            <div class="form-group">
+              <mat-form-field appearance="outline">
+                <mat-label>Additinal Comments</mat-label>
+                <textarea matInput placeholder="Textarea"></textarea>
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+
+        <div class="btns text-right">
+          <button mat-button class="btn btn-info"><i class="fa fa-share"></i> Submit</button>
+          <button mat-button class="btn btn-success"><i class="fa fa-save"></i> Save</button>
+          <button mat-button (click)="openSnackBar('Form Reset', 'Close')" class="btn btn-warning"><i class="fa fa-redo-alt"></i> Reset</button>
+          <button mat-button class="btn btn-danger"><i class="fa fa-times-circle"></i> Cancel</button>
+          <button mat-button class="btn btn-secondary"><i class="fa fa-info"></i> Info</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,4 @@
+config=https://registry.npmjs.org
+strict-ssl=false
+proxy=http://Aditya.Chilbule:Adi@1234@entproxy.in.ril.com:8080/
+https-proxy=http://Aditya.Chilbule:Adi@1234@entproxy.in.ril.com:8080/

@@ -1,0 +1,57 @@
+app-home {
+    width: 100%;
+}
+
+.headerText {
+    color: $primary;
+    text-align: center;
+}
+
+.home {
+    .owl-carousel {
+        padding: 10px 40px 0;
+
+        .owl-nav {
+            .owl-prev,
+            .owl-next {
+                position: absolute;
+                top: 36%;
+                z-index: 5;
+                background: transparent;
+                border: none;
+                color: #666;
+                font-size: 60px;
+                line-height: 36px;
+                vertical-align: middle;
+                margin: 0;
+                padding: 10px;
+                -webkit-appearance: none;
+            }
+            .owl-prev {
+                left: 0;
+            }
+            .owl-next {
+                right: 0;
+            }
+        }
+        .owl-dots {
+            .owl-dot {
+                background: transparent;
+                border: none;
+                color: #666;
+                vertical-align: middle;
+                margin: 0;
+                padding: 0;
+                -webkit-appearance: none;
+                span {
+                    margin: 4px;
+                }
+                &.active {
+                    span {
+                        background: $primary;
+                    }
+                }
+            }
+        }
+    }
+}
